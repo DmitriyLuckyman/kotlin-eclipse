@@ -82,4 +82,67 @@
          </command>
       </menuContribution>
    </extension>
+   <extension
+         id="org.jetbrains.kotlin.ui.marker"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.marker">
+      </super>
+      <super
+            type="org.eclipse.core.resources.textmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors.markerAnnotationSpecification">
+      <specification
+            annotationType="org.jetbrains.kotlin.ui.annotation.error"
+            colorPreferenceKey="org.jetbrains.kotlin.ui.annotation.error.color"
+            colorPreferenceValue="255,0,128"
+            highlightPreferenceKey="org.jetbrains.kotlin.ui.annotation.error.highlight"
+            label="Kotlin Compilation Error"
+            overviewRulerPreferenceKey="org.jetbrains.kotlin.ui.annotation.error.overview"
+            overviewRulerPreferenceValue="true"
+            symbolicIcon="error"
+            textPreferenceKey="org.jetbrains.kotlin.ui.annotation.error.text"
+            textPreferenceValue="true"
+            textStylePreferenceKey="org.jetbrains.kotlin.ui.annotation.error.textstyle"
+            textStylePreferenceValue="PROBLEM_UNDERLINE"
+            verticalRulerPreferenceKey="org.jetbrains.kotlin.ui.annotation.error.ruler"
+            verticalRulerPreferenceValue="true">
+      </specification>
+      <specification
+            annotationType="org.jetbrains.kotlin.ui.annotation.warning"
+            colorPreferenceKey="org.jetbrains.kotlin.ui.annotation.warning.color"
+            colorPreferenceValue="244,200,45"
+            highlightPreferenceKey="org.jetbrains.kotlin.ui.annotation.warning.highlight"
+            label="Kotlin Compilation Warning"
+            overviewRulerPreferenceKey="org.jetbrains.kotlin.ui.annotation.warning.overview"
+            overviewRulerPreferenceValue="true"
+            symbolicIcon="warning"
+            textPreferenceKey="org.jetbrains.kotlin.ui.annotation.warning.text"
+            textPreferenceValue="true"
+            textStylePreferenceKey="org.jetbrains.kotlin.ui.annotation.warning.textstyle"
+            textStylePreferenceValue="PROBLEM_UNDERLINE"
+            verticalRulerPreferenceKey="org.jetbrains.kotlin.ui.annotation.warning.ruler"
+            verticalRulerPreferenceValue="true">
+      </specification>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors.annotationTypes">
+      <type
+            markerSeverity="1"
+            markerType="org.jetbrains.kotlin.ui.marker"
+            name="org.jetbrains.kotlin.ui.annotation.error"
+            super="org.eclipse.ui.workbench.texteditor.error">
+      </type>
+      <type
+            markerSeverity="2"
+            markerType="org.jetbrains.kotlin.ui.marker"
+            name="org.jetbrains.kotlin.ui.annotation.warning"
+            super="org.eclipse.ui.workbench.texteditor.warning">
+      </type>
+   </extension>
 </plugin>
