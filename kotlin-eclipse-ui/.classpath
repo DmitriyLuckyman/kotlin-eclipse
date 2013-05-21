@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/kotlin-bundled-compiler"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/kotlin-eclipse-core"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/org.eclipse.core.runtime.compatibility.registry_3.5.101"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
